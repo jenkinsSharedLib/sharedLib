@@ -82,20 +82,7 @@ def call() {
                    } 
                 }
             }
-            stage ('send_input_start')
-             {
-                 steps {
-                     jobtype = "build"
-                     branch = "dev"
-                     application = "My Application"
-                     component = "My Component"
-                     release = "My Release"
-                     jstatus = "Started"
-                     jresult = "Building"
-                     msg = "BNum="+BUILD_NUMBER+",JName="+JOB_NAME+",AppName="+application+",CompName="+component+",BranchName="+branch+",RelNumber="+release+",JobStatus="+jstatus+",JobResult="+jresult+",JType="+jobtype
-                     splunkins.send(msg)
-                }
-             }
+            
         }
         post {
             always {
